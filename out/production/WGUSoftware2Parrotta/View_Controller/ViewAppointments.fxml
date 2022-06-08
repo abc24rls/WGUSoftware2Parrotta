@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="appointmentMain" prefHeight="613.0" prefWidth="1129.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ViewAppointmentsController">
+    <children>
+        <Label fx:id="Label" alignment="CENTER" layoutX="5.0" layoutY="8.0" prefHeight="21.0" prefWidth="1114.0" text="Appointments">
+            <font>
+                <Font name="SansSerif Regular" size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="9.0" layoutY="573.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font></Button>
+      <Button layoutX="1026.0" layoutY="573.0" mnemonicParsing="false" onAction="#handleReports" text="Reports">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Button>
+      <TabPane layoutX="15.0" layoutY="56.0" prefHeight="504.0" prefWidth="1105.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Customers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Group>
+                           <children>
+                                <TableView fx:id="customerTable" layoutY="38.0" onMouseClicked="#handleCustomerSelection" prefHeight="395.0" prefWidth="1099.0">
+                                    <columns>
+                                        <TableColumn fx:id="customerId" prefWidth="52.0" text="ID" />
+                                        <TableColumn fx:id="customerName" prefWidth="145.0" text="Customer Name" />
+                                        <TableColumn fx:id="address" prefWidth="336.0" text="Address" />
+                                        <TableColumn fx:id="postalCode" prefWidth="92.0" text="Postal Code" />
+                                        <TableColumn fx:id="phone" prefWidth="188.0" text="Phone" />
+                                        <TableColumn fx:id="country" minWidth="0.0" prefWidth="149.0" text="Country" />
+                                        <TableColumn fx:id="division" prefWidth="135.0" text="Division" />
+                                    </columns>
+                                </TableView>
+                              <Button layoutX="442.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleAddCustomer" text="Add">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="499.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleEditCustomer" text="Edit">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="580.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleDeleteCustomer" text="Delete">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Group>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Appointment">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Group>
+                            <children>
+                                <TableView fx:id="aptTable" layoutY="38.0" prefHeight="395.0" prefWidth="1099.0">
+                                    <columns>
+                                        <TableColumn fx:id="aptID" prefWidth="43.0" text="ID" />
+                                        <TableColumn fx:id="aptTitle" prefWidth="194.0" text="Title" />
+                                        <TableColumn fx:id="aptDescription" prefWidth="238.0" text="Description" />
+                                        <TableColumn fx:id="aptLocation" prefWidth="126.0" text="Location" />
+                                        <TableColumn fx:id="aptContact" prefWidth="130.0" text="Contact" />
+                                        <TableColumn fx:id="aptType" minWidth="0.0" prefWidth="127.0" text="Type" />
+                                        <TableColumn fx:id="aptStart" prefWidth="101.0" text="Start" />
+                                        <TableColumn fx:id="aptEnd" prefWidth="102.0" text="End" />
+                                        <TableColumn fx:id="user" prefWidth="43.0" text="User" />
+                                    </columns>
+                                </TableView>
+                                <Button layoutX="442.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleAddAppointments" text="Add">
+                                    <font>
+                                        <Font name="SansSerif Regular" size="18.0" />
+                                    </font>
+                                </Button>
+                                <Button layoutX="499.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleEditAppointments" text="Edit">
+                                    <font>
+                                        <Font name="SansSerif Regular" size="18.0" />
+                                    </font>
+                                </Button>
+                                <Button layoutX="580.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleDeleteAppointment" text="Delete">
+                                    <font>
+                                        <Font name="SansSerif Regular" size="18.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Group>
+                      <Group fx:id="radial" layoutX="436.0" layoutY="7.0">
+                          <children>
+                              <Label layoutY="2.0" nodeOrientation="LEFT_TO_RIGHT" text="View:">
+                                  <font>
+                                      <Font name="SansSerif Regular" size="18.0" />
+                                  </font>
+                              </Label>
+                              <RadioButton fx:id="weekly" contentDisplay="CENTER" layoutX="52.0" mnemonicParsing="false" onAction="#radioButtonChanges" text="Week" textAlignment="CENTER">
+                                  <toggleGroup>
+                                      <ToggleGroup fx:id="weeklyMonthly" />
+                                  </toggleGroup>
+                                  <font>
+                                      <Font name="SansSerif Regular" size="18.0" />
+                                  </font>
+                              </RadioButton>
+                              <RadioButton fx:id="monthly" contentDisplay="CENTER" layoutX="144.0" mnemonicParsing="false" onAction="#radioButtonChanges" selected="true" text="Month" textAlignment="CENTER" toggleGroup="$weeklyMonthly">
+                                  <font>
+                                      <Font name="SansSerif Regular" size="18.0" />
+                                  </font>
+                              </RadioButton>
+                          </children>
+                      </Group>
+                      <Label layoutX="14.0" layoutY="9.0" prefWidth="101.0" text="Customer:">
+                          <font>
+                              <Font name="SansSerif Regular" size="18.0" />
+                          </font>
+                      </Label>
+                      <Label fx:id="CustomerLabel" layoutX="103.0" layoutY="9.0" prefHeight="21.0" prefWidth="176.0" text="None">
+                          <font>
+                              <Font name="SansSerif Regular" size="18.0" />
+                          </font>
+                      </Label>
+                    </children>
+                </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="currentUserLabel" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="15.0" layoutY="10.0" scaleShape="false" text="Current User" />
+      <Label fx:id="userZone" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="972.0" layoutY="10.0" scaleShape="false" text="Zone" />
+    </children>
+</AnchorPane>

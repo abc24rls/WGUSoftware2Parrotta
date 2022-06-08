@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="512.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ReportsController">
+    <children>
+        <Label layoutX="407.0" layoutY="14.0" text="Reports">
+            <font>
+                <Font name="SansSerif Regular" size="18.0" />
+            </font>
+        </Label>
+        <TabPane layoutX="14.0" layoutY="55.0" prefHeight="404.0" prefWidth="850.0" style="-fx-border-color: #000000;" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Monthly Appointment Types">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="745.0">
+                            <children>
+                        <TreeTableView fx:id="aptMatTable" layoutX="255.0" layoutY="15.0" prefHeight="347.0" prefWidth="325.0">
+                          <columns>
+                            <TreeTableColumn fx:id="matMonth" prefWidth="325.0" text="Appointment Types by Month" />
+                          </columns>
+                        </TreeTableView>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            <Tab text="Customer Schedules">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="572.0">
+                     <children>
+                        <TreeTableView fx:id="schedTable" layoutX="18.0" layoutY="15.0" prefHeight="309.0" prefWidth="815.0">
+                           <columns>
+                              <TreeTableColumn fx:id="schedContact" prefWidth="815.0" text="Customer Schedules" />
+                           </columns>
+                        </TreeTableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+                <Tab text="Modified Appointments">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                        <TreeTableView fx:id="modifiedApts" layoutX="258.0" layoutY="14.0" prefHeight="347.0" prefWidth="317.0">
+                          <columns>
+                            <TreeTableColumn fx:id="users" prefWidth="316.0" text="Modified Appointements by User" />
+                          </columns>
+                        </TreeTableView>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button layoutX="799.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font></Button>
+    </children>
+</AnchorPane>
