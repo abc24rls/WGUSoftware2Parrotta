@@ -1,0 +1,24 @@
+# TITLE: Title Appointment System
+
+## PURPOSE:
+- The Purpose of this application is to provide a mechanism for scheduling appointments between
+- the company's customers and contacts.
+
+# AUTHOR INFORMATION
+- Author: Amanda Parrotta
+- Email:  aparr01@wgu.edu
+- Application version 1
+- Date: May 30th, 2022
+
+# RUN INFORMATION
+- IDE: IntelliJ IDEA 2021.1 (Community Edition)
+- JDK: 17.0.1
+- JavaFX SDK: javafx-sdk-17.0.1
+- JDBC: jdbc:mysql://localhost:3306/client_schedule?connectionTimeZone=SERVER"
+- Add VM Options : --module-path ${PATH_TO_FX} --add-modules javafx.fxml,javafx.controls,javafx.graphics
+
+# REPORT INFORMATION
+- The additional report I chose to include is a display of all the appointments modified by a user.
+
+# MySQL Connector
+- mysql-connector-java-8.0.25
